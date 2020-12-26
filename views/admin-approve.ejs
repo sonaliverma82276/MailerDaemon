@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #9ded91;
+}
+
+
+.header {
+      padding:8px;
+    font-size: 25px;
+  width: 25%;
+  margin-left: 35%;
+  box-shadow: 5px 10px 8px 10px #888888;
+
+    text-align: center;
+}
+
+
+
+.leftcolumn {   
+    float: left;
+  margin-left: 10%;
+    width: 75%;
+}
+
+
+
+
+
+.fakeimg {
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+  margin-bottom: 90px;
+}
+
+
+.card {
+     background-color: #faa550;
+     padding: 20px;
+     margin-top: 30px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#input1{
+width: 50px;
+border : none;
+background: none;
+pointer-events: none;
+
+}
+button{
+font-size: 20px;
+margin-top: 10px;
+background-color: grey;
+
+}
+
+@media screen and (max-width: 800px) {
+    .leftcolumn {   
+        width: 100%;
+        padding: 0;
+    margin-left: 0;
+    }
+  .header{
+  width: 100%;
+  margin-left: 0;
+  
+  }
+}
+     *#title {
+            /* background-color: #ff4c68; */
+            background-color: #9acd32;
+      height: 100px;
+            color: #ffffff;
+        }
+        .container-fluid {
+            padding: 3% 15%;
+        }
+
+        .download-button {
+            margin: 7% 5% 7% 0%;
+        }
+
+        /* navbar */
+        .navbar:nth-child(1) {
+            padding: 0 0 4.5rem;
+        }
+
+        .navbar-brand {
+            font-family: "Ubuntu";
+            font-size: 2.8rem;
+            font-weight: bold;
+    
+      
+  
+            color: #ffffff;
+        }
+
+        .nav-item {
+            padding: 0 18px;
+        }
+
+        .our_services {
+            font-family: "Montserrat-Bold";
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+      
+        }
+
+        .nav-link {
+            font-size: 1.9rem;
+            font-family: "Montserrat";
+        }
+
+        /* title image */
+        .title-image {
+            border-radius: 100%;
+            width: 40%;
+        }
+
+        .title-image:hover {
+            height: 300px;
+            border-radius: 30% 30% 30% 30%;
+        }
+    #h{
+    margin-left: 60px;
+    margin-top: -38px;
+    
+    }
+    #tog{
+    float: right;
+    }
+    
+    
+    
+    
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.content1{
+ 
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 20px;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+margin-top: 10px;
+  margin-bottom: -20px;
+  width: 103%;
+  background: #faa550;
+  margin-left: -18px;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 10px;
+  
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #5f90a3;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #f12020;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background:  #9ded91;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #f12020;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #695a59;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background:  #9ded91;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+
+@media (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  width: 110%;
+  margin-left: -30px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+/*updated approve blog css*/
+#mbox {
+  width: 100%;
+  margin: 30px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  padding-top: 10px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+.mabox{
+  width: 20%;
+  margin: 30px auto;
+  margin-bottom: 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#mheading {
+  font-family: serif;
+  font-weight: bold;
+  background-color: #faa550;
+  text-align: center;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+#mblog {
+  text-align: center;
+}
+
+
+hr.light {
+  border-top: 2px solid #000;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+button:focus {
+  outline: none;
+}
+.far {
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 0 auto;
+  cursor: pointer;
+  user-select: none;
+   color: #000;
+}
+.fa {
+  color: #faa550; 
+  margin: 0 auto;
+  padding: 0 auto;
+  cursor: pointer;
+  user-select: none;
+}
+.pAn:hover .fa-chevron-left:before {
+   content: "\f137";
+}
+.pAn:hover .fa-chevron-right:before {
+   content: "\f138";
+}
+.pAn {
+   text-align:center; 
+        width:100%; 
+}
+.pAn i {
+  font-size: 40px;
+}
+#name_date {
+  color: #000;
+  text-align: left; 
+  font-size: 13px;
+}
+#mtitle {
+  font-size: 17px;
+  font-weight: bold; 
+  text-align: left; 
+  color: #000;
+}
+#mcontent {
+  font-size: 13px;  
+  color: #000; 
+  text-align: left;
+}
+.mapprove , .mdelete {
+  outline: none;
+  outline: 0;
+  margin-bottom: 10px;
+  width:130px;
+  font-weight: bolder;
+  margin-top: 15px;
+  font-size: 17px;
+  background-color: #faa550;
+  padding: 7px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+.mapprove:hover , .mdelete:hover {
+  background-color: rgb(250, 140, 80);
+}
+
+
+
+/*tablets*/
+@media (max-width: 768px){
+#mpost {
+  width:90px;
+  font-size: 16px;
+}
+#mheading h1 {
+  font-size: 20px;
+}
+#mbox {
+  width: 85%;
+}
+.mabox {
+  width: 30%;
+}
+#mheading {
+  padding-top: 0.9%;
+  padding-bottom: 0.9%;
+}
+.pAn i {
+  font-size: 30px;
+  text-align: center;
+}
+#mapprove , #mdelete {
+  width:80px;
+  font-size: 12px;
+}
+hr.light {
+  padding-bottom: 0.1rem;
+}
+#complete {
+   padding-right: 2px;
+    padding-left: 2px;
+}
+#mcomplete {
+   padding-right: 36px;
+    padding-left: 36px;
+}
+}
+
+/*mobile*/
+@media (max-width: 576px){
+  #complete {
+   padding-right: 2px;
+    padding-left: 2px;
+}
+#mcomplete {
+   padding-right: 32px;
+    padding-left: 32px;
+}
+#mheading h1 {
+  font-size: 20px;
+}
+#mbox {
+  width: 100%;
+}
+.mabox{
+  width: 30%;
+}
+#mheading {
+  padding-top: 0.9%;
+  padding-bottom: 0.9%;
+}
+hr.light {
+  padding-bottom: 0.2rem;
+}
+.far , .selected-heart {
+  font-size: 15px;
+}
+.pAn {
+   text-align:center; 
+        width:100%; 
+        padding-left: 7px; 
+   padding-right: 7px;
+}
+.pAn i {
+  font-size: 20px;
+  text-align: center;
+}
+#name_date { 
+  font-size: 10px;
+}
+#mtitle {
+  font-size: 15px;
+}
+#mcontent {
+  font-size: 11px;  
+}
+#mapprove , #mdelete {
+  width:70px;
+  font-size: 11px;
+}
+#mheading h1 {
+  font-size: 20px;
+}
+}
+
+button:focus {
+  outline: none;
+}
+</style>
+</head>
+<body>
+<div class="container-fluid" style="padding-bottom: 40px;">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" style="background-color:#F4A460;" id="nav">
+                <a class="navbar-brand" id="brand" href="#" style="line-height: 0rem;padding-left: 1%;"><img class="title-image"
+                    src="https://scontent.fdel2-2.fna.fbcdn.net/v/t1.0-9/90089823_3051600828235814_7121474201071910912_o.png?_nc_cat=100&_nc_sid=09cbfe&_nc_ohc=F-R19pXDuPUAX_Y1oG8&_nc_ht=scontent.fdel2-2.fna&oh=0dcd82522bd651094081a3992b2c5478&oe=5F9BE35E"
+                    alt="Not in the phone" style="height:40px; width:40px;"><h1 id="h"> Mailer Daemon</h1></a>
+                <button class="navbar-toggler" id="tog" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" style="padding: 10px;">
+                    <span class="navbar-toggler-icon"  style="padding: 10px;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"
+                               >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/placement" class="nav-link"
+                                >Placement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/show"
+                                >Visit Blogs</a>
+                        </li>
+            <li class="nav-item">
+                            <a class="nav-link" href="/blog/compose"
+                               >Write Blogs</a>
+                        </li>
+                        <form class="form-inline my-2 my-lg-0">
+                            <!-- <button type="button" class="btn btn-outline-dark btn-lg my-2 my-lg-0 download-button">SignUp/LogIn</button> -->
+                           <a href="/signin"> <button type="button" class="btn btn-lg my-2 my-lg-0 btn-outline-dark download-button">SignUp/LogIn</button></a>
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+<div class="mabox" id="mheading">
+     <h1> BLOG </h1>
+  </div>
+<div class="container-fluid" id="complete">
+  <div class="row align-items-center">
+     <div class="col-1 pAn">
+         <i class="fa fa-chevron-left" onclick="plusSlides(1)"></i>
+     </div>
+       <div class="col-10">
+  <div id="mbox">
+   <div class="container-fluid" id="mcomplete">
+           <div id="mblog">
+            <% newitems.forEach(function(item) { %>
+           <div class="mySlides">
+            <div class="row">
+       <div class="col-12">
+         <p id="name_date"><%= item.name %> &#9679;  <%= item.date %>  </p></div> </div>
+         <div class="row">
+         <div class="col-12">
+         <h2 id="mtitle"> <%=  item.title %> </h2> </div> </div>
+         <div class="row">
+         <div class="col-12">
+         <p id="mcontent"> <%=  item.content %> </p> </div> </div> 
+         <div class="row">
+         <div class="col-12">
+         <hr class="light"> </div> </div>
+         <div class="row">
+         <div class="col-12">
+          <form action="/admin/approve" method="post">
+             <button class="mapprove" id="mapprove" name="approve" style="margin-right: 5px;" value="<%=item._id%>" formaction="/admin/approve">Approve</button>
+             <button class="mdelete" id="mdelete" name="delete" style="margin-left: 5px;" value="<%=item._id%>" formaction="/admin/delete">Delete</button></form>
+          </div> 
+         </div></div>
+         <% }) %>
+     </div>
+
+         </div>
+       </div>
+    </div>
+    <div class="col-1 pAn">
+         <i class="fa fa-chevron-right" onclick="plusSlides(1)" style="float: right;" ></i>
+     </div>
+  </div>
+</div>
+
+<footer>
+      <div class="main-content">
+        <div class="left box">
+          <h2 style="font-size: 17px;">About us</h2>
+          <div class="content">
+            <p style="font-size: 17px;">Mailer Daemon is the in-campus Students newspaper of IIT(ISM) Dhanbad</p>
+            <div class="social">
+              <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+              <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2 style="font-size: 17px;">Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text" style="font-size: 17px;">INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES), DHANBAD,
+JHARKHAND, INDIA, 826004.</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text" style="font-size: 17px;">09999999</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text" style="font-size: 17px;">abc@example.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2 style="font-size: 17px;">Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text" style="font-size: 17px;">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text" style="font-size: 17px;">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit" style="font-size: 17px;">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+     
+    </footer>
+<script> 
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block"; 
+}
+</script>
+
+
+
+</body>
+
+
+</html>
+        

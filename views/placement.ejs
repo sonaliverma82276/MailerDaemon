@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Placement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+   <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+
+		@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.content1{
+ 
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 20px;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+margin-top: 10px;
+  bottom: 0px;
+  width: 100%;
+  background: #faa550;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 10px;
+  
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #5f90a3;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #f12020;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background:  #9ded91;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #f12020;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #695a59;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background:  #9ded91;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+ @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+background-color: #0fb883;
+text-color: black;
+color: black;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-top:2%;
+  display: none;
+   
+}
+#foo{
+background-color: #faa550;
+}
+#myInputt {
+ background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-top:2%;
+  
+display: none;
+}
+#myInputtt {
+ background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-top:2%;
+  
+display: none;
+}
+#but{
+cursor: pointer;
+font-size: 20px;
+text-decoration: underline;
+background-color:#faa550;
+padding: 10px;
+
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  margin-top: 5%;
+  margin-right: 0;
+}
+
+
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+#ok{
+margin-top: 30px;
+
+font-size: 17px;
+content: none;
+background-color: #faa550;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #faa550;
+}
+#head{
+text-align: center;
+border: 1px solid black;
+margin-left: 39%;
+  box-shadow: 5px 10px 8px 10px #888888;
+width: 300px;
+}
+@media (max-width: 600px){
+#head{
+margin-left: 10%;
+
+}
+}
+@media (min-width: 601px) and (max-width: 768px){
+#head{
+margin-left: 30%;
+
+}}
+@media (max-width: 768px){
+#myInput{
+ width: 70%;
+
+}
+#myInputt{
+ width: 70%;
+
+}
+#myInputtt{
+ width: 70%;
+
+}
+}
+@media (max-width: 1000px)
+{
+#head{
+margin-top: 28px;
+}
+}
+ *#title {
+            /* background-color: #ff4c68; */
+            background-color: #9acd32;
+			height: 100px;
+            color: #ffffff;
+        }
+		    .container-fluid {
+            padding: 3% 15%;
+        }
+
+        .download-button {
+            margin: 7% 5% 7% 0%;
+        }
+
+        /* navbar */
+        .navbar:nth-child(1) {
+            padding: 0 0 4.5rem;
+        }
+
+        .navbar-brand {
+            font-family: "Ubuntu";
+            font-size: 2.8rem;
+            font-weight: bold;
+		
+			
+	
+            color: #ffffff;
+        }
+
+        .nav-item {
+            padding: 0 18px;
+        }
+
+        .our_services {
+            font-family: "Montserrat-Bold";
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+			
+        }
+
+        .nav-link {
+            font-size: 1.9rem;
+            font-family: "Montserrat";
+        }
+
+        /* title image */
+        .title-image {
+            border-radius: 100%;
+            width: 40%;
+        }
+
+        .title-image:hover {
+            height: 300px;
+            border-radius: 30% 30% 30% 30%;
+        }
+		#h{
+		margin-left: 60px;
+		margin-top: -38px;
+		
+		}
+		#tog{
+		float: right;
+		}
+
+</style>
+</head>
+<body>
+<div class="container-fluid" style="padding-bottom: 40px;">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" style="background-color:#F4A460;" id="nav">
+                <a class="navbar-brand" id="brand" href="#" style="line-height: 0rem;padding-left: 1%;"><img class="title-image"
+                    src="https://scontent.fdel2-2.fna.fbcdn.net/v/t1.0-9/90089823_3051600828235814_7121474201071910912_o.png?_nc_cat=100&_nc_sid=09cbfe&_nc_ohc=F-R19pXDuPUAX_Y1oG8&_nc_ht=scontent.fdel2-2.fna&oh=0dcd82522bd651094081a3992b2c5478&oe=5F9BE35E"
+                    alt="Not in the phone" style="height:40px; width:40px;"><h1 id="h"> Mailer Daemon</h1></a>
+                <button class="navbar-toggler" id="tog" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" style="padding: 10px;">
+                    <span class="navbar-toggler-icon"  style="padding: 10px;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"
+                               >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/placement" class="nav-link"
+                                >Placement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/show"
+                                >Visit Blogs</a>
+                        </li>
+            <li class="nav-item">
+                            <a class="nav-link" href="/blog/compose"
+                               >Write Blogs</a>
+                        </li>
+                        <form class="form-inline my-2 my-lg-0">
+                            <!-- <button type="button" class="btn btn-outline-dark btn-lg my-2 my-lg-0 download-button">SignUp/LogIn</button> -->
+                           <a href="/signin"> <button type="button" class="btn btn-lg my-2 my-lg-0 btn-outline-dark download-button">SignUp/LogIn</button></a>
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+<h1 id="head">Placement Status</h1>
+<div class="container">
+                                        
+ <div class="dropdown">
+   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="ok">Search Options
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" id="butt">
+      <li id="but" onclick="hello()">Name</li>
+      <li id="but" onclick="helloo()">Branch</li>
+          <li id="but" onclick="heloo()">Company</li>
+    </ul>
+  </div>
+</div>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for branch" title="Type in a name">
+<input type="text" id="myInputt" onkeyup="myFunctionn()" placeholder="Search for name" title="Type in a name">
+<input type="text" id="myInputtt" onkeyup="myFunctionnn()" placeholder="Search for company" title="Type in a name">
+<table id="myTable">
+  <tr class="header">
+    <th style="width:30%;">Name</th>
+    <th style="width:25%;">Branch</th>
+   <th style="width:25%;">Company</th>
+	 <th style="width:20%;">On/Off Campus</th>
+  </tr>
+      <tbody id="data"></tbody>
+</table>
+   <footer>
+      <div class="main-content">
+        <div class="left box">
+          <h2 style="font-size: 17px;">About us</h2>
+          <div class="content">
+            <p style="font-size: 17px;">Mailer Daemon is the in-campus Students newspaper of IIT(ISM) Dhanbad</p>
+            <div class="social">
+              <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+              <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2 style="font-size: 17px;">Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text" style="font-size: 17px;">INDIAN INSTITUTE OF TECHNOLOGY (INDIAN SCHOOL OF MINES), DHANBAD,
+JHARKHAND, INDIA, 826004.</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text" style="font-size: 17px;">09999999</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text" style="font-size: 17px;">abc@example.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right box">
+          <h2 style="font-size: 17px;">Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text" style="font-size: 17px;">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text" style="font-size: 17px;">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit" style="font-size: 17px;">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+     
+    </footer>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i,j,k,txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent;
+	  if(filter==="")
+	  {
+	    tr[i].style.display = "";
+	    
+	  }
+	  for(j=0;j<filter.length;j++)
+	  {
+	 
+	 
+      if (txtValue.toUpperCase()[j]===filter[j]&&txtValue.toUpperCase()[j-1]===filter[j-1]&&txtValue.toUpperCase()[j-2]===filter[j-2] ) {
+	  
+        tr[i].style.display = "";
+      } 
+	 
+	  else {
+        tr[i].style.display = "none";
+      }
+	  }
+	  
+    }       
+  }
+}
+function myFunctionn() {
+  var input, filter, table, tr, td, i, j,txtValue;
+  input = document.getElementById("myInputt");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+	  	  if(filter==="")
+	  {
+	    tr[i].style.display = "";
+	    
+	  }
+	   for(j=0;j<filter.length;j++)
+	  {
+	 
+      if (txtValue.toUpperCase()[j]===filter[j]&&txtValue.toUpperCase()[j-1]===filter[j-1]&&txtValue.toUpperCase()[j-2]===filter[j-2]) {
+        tr[i].style.display = "";
+      } 
+      
+       else {
+        tr[i].style.display = "none";
+      }
+	  }
+    }       
+  }
+}
+function myFunctionnn() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInputtt");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+	    	  if(filter==="")
+	  {
+	    tr[i].style.display = "";
+	    
+	  }
+	   for(j=0;j<filter.length;j++)
+	  {
+	 
+      if (txtValue.toUpperCase()[j]===filter[j]&&txtValue.toUpperCase()[j-1]===filter[j-1]&&txtValue.toUpperCase()[j-2]===filter[j-2]) {
+        tr[i].style.display = "";
+      } 
+      
+       else {
+        tr[i].style.display = "none";
+      }
+	  }
+    }       
+  }
+}
+function hello(){
+x= document.getElementById("myInputt");
+x.style.display="block";
+x= document.getElementById("myInput");
+x.style.display="none";
+x= document.getElementById("myInputtt");
+x.style.display="none";
+
+}
+function helloo(){
+x= document.getElementById("myInput");
+x.style.display="block";
+x= document.getElementById("myInputt");
+x.style.display="none";
+
+x= document.getElementById("myInputtt");
+x.style.display="none";
+}
+function heloo(){
+x= document.getElementById("myInputtt");
+x.style.display="block";
+x= document.getElementById("myInputt");
+x.style.display="none";
+x= document.getElementById("myInput");
+x.style.display="none";
+
+
+}
+</script>
+<script>
+    fetch("https://spreadsheets.google.com/feeds/list/1i-kD5du0Dgm3sUmTuWhLFUaO7JNb3WpqO7waXMYctvU/od6/public/values?alt=json")
+       .then(res => res.json())
+       .then(data => {
+          var temp = "";
+          data = data.feed.entry;
+          data.forEach(d => {
+            temp+= "<tr>";
+            temp+= "<td>"+d.gsx$name.$t+"</td>";
+            temp+= "<td>"+d.gsx$branch.$t+"</td>";
+            temp+= "<td>"+d.gsx$company.$t+"</td>";
+            temp+= "<td>"+d.gsx$onoffcampus.$t+"</td></tr>";
+          })
+          document.getElementById("data").innerHTML =  temp;
+       })
+  </script>
+
+		 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

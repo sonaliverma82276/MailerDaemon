@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            margin: 50px auto;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap');
+
+        body {
+            font-family: "Montserrat";
+        }
+
+        *#title {
+            /* background-color: #ff4c68; */
+            background-color: #9acd32;
+            color: #ffffff;
+        }
+
+        hr {
+            background-color: indigo;
+
+        }
+
+        h1 {
+            font-family: "Montserrat-Black";
+            font-size: 3rem;
+            line-height: 1.5;
+        }
+
+        h3 {
+            font-family: "Montserrat-Bold";
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: grey;
+        }
+
+        h2 {
+            font-family: "Montserrat-Bold";
+            font-size: 3rem;
+        }
+
+        .container-fluid {
+            padding: 3% 15%;
+        }
+
+        .download-button {
+            margin: 5% 3% 5% 0%;
+        }
+
+        /* navbar */
+        .navbar:nth-child(1) {
+            padding: 0 0 4.5rem;
+        }
+
+        .navbar-brand {
+            font-family: "Ubuntu";
+            font-size: 2.0rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .nav-item {
+            padding: 0 18px;
+        }
+
+        .our_services {
+            font-family: "Montserrat-Bold";
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            font-family: "Montserrat";
+        }
+
+        /* title image */
+        .title-image {
+            border-radius: 100%;
+            width: 60%;
+        }
+
+        .title-image:hover {
+            height: 300px;
+            border-radius: 30% 30% 30% 30%;
+        }
+
+        /* features section */
+        #features {
+            padding: 7% 15%;
+            margin-top: 1px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 5%;
+        }
+
+        /* icons */
+
+        .icon:hover {
+            color: #ff4c68;
+        }
+
+        /* testimonials */
+        #testimonials {
+            text-align: center;
+            padding: 7% 15%;
+            background-color: #ef8172;
+            color: #ffffff;
+        }
+
+        .testimonial-image {
+            border-radius: 100%;
+            width: 60%;
+        }
+
+        /* press content */
+        .press {
+            padding: 7%;
+        }
+
+        .press-items {
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            /* margin: 10px; */
+        }
+
+        div#carousel {
+            perspective: 1200px;
+            background: #100000;
+            padding: 7% 0%;
+            font-size: 0;
+            margin-bottom: 3rem;
+            overflow: hidden;
+        }
+
+        figure#spinner {
+            transform-style: preserve-3d;
+            height: 300px;
+            transform-origin: 50% 50% -500px;
+            transition: 1s;
+        }
+
+        figure#spinner img {
+            width: 40%;
+            max-width: 425px;
+            position: absolute;
+            left: 30%;
+            transform-origin: 50% 50% -500px;
+            outline: 1px solid transparent;
+        }
+
+        figure#spinner img:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        figure#spinner img:nth-child(2) {
+            transform: rotateY(-45deg);
+        }
+
+        figure#spinner img:nth-child(3) {
+            transform: rotateY(-90deg);
+        }
+
+        figure#spinner img:nth-child(4) {
+            transform: rotateY(-135deg);
+        }
+
+        figure#spinner img:nth-child(5) {
+            transform: rotateY(-180deg);
+        }
+
+        figure#spinner img:nth-child(6) {
+            transform: rotateY(-225deg);
+        }
+
+        figure#spinner img:nth-child(7) {
+            transform: rotateY(-270deg);
+        }
+
+        figure#spinner img:nth-child(8) {
+            transform: rotateY(-315deg);
+        }
+
+        div#carousel~span {
+            color: #fff;
+            margin: 5%;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: 0.6s color;
+            position: relative;
+            margin-top: -6rem;
+            border-bottom: none;
+            line-height: 0;
+        }
+
+        div#carousel~span:hover {
+            color: #888;
+            cursor: pointer;
+        }
+
+        #div {
+        margin-top: -150px;
+            padding: 7%;
+            color: #66ff99;
+            text-shadow: 0 5px 5px #000000bb;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(im.jpg);
+
+            background-repeat: no-repeat;
+            background-size: 800px 275px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-position: center;
+            background-color: black;
+        }
+
+        @media (max-width: 1000px) {
+            #div {
+
+                background-size: 600px 200px;
+
+            }
+
+            #place {
+                margin-top: 0px;
+            }
+
+        }
+
+        #carouselExampleCaptions {
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: 800px 350px;
+            background-position: center;
+            background-color: black;
+            color: #66ff99;
+            text-shadow: 0 5px 5px #000000bb;
+            padding-top: 20px;
+        }
+
+        #para {
+            color: #074ff7;
+        }
+
+        @media (max-width: 618px) {
+            #carouselExampleCaptions {
+                background-size: 600px 280px;
+                padding-top: 0px;
+                margin-top: -60px;
+            }
+
+        }
+         @media(min-width: 619px) and (max-width: 799px) {
+            #carouselExampleCaptions {
+                background-size: 600px 280px;
+                padding-top: 0px;
+                margin-top: -80px;
+            }
+
+        }
+
+         @media(min-width: 800px) and (max-width: 1000px) {
+            #carouselExampleCaptions {
+                background-size: 800px 300px;
+                padding-top: 0px;
+                margin-top: -120px;
+            }
+
+        }
+
+        .blogs-box {
+        margin-top: -22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* background-image:radial-gradient(#121212,#000000); */
+            color: #ffffffdd;
+            line-height: 3em;
+            /*  padding: 17% 0% 0% 0%;*/
+        }
+
+        .blogs-animation {
+            padding: 3em 1.5em;
+            background-image: linear-gradient(45deg, #7b4397, #dc143C);
+            border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+            animation: animate 4s infinite 0.5s;
+        }
+
+        .actual-blog {
+            font-family: 'Orbitron', sans-serif;
+            color: #66ff99;
+            font-size: 56px;
+            text-align: center;
+            padding-top: 110px;
+            padding-bottom: 110px;
+
+            text-shadow: 0 5px 5px #000000bb;
+            margin-top: 0px;
+        }
+
+        @media (max-width: 1000px) {
+            .actual-blog {
+                padding-top: 40px;
+                padding-bottom: 4px;
+            }
+        }
+        @keyframes animate {
+            0% {
+                border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+            }
+
+            25% {
+                border-radius: 75% 25% 45% 55%/ 30% 30% 70% 70%;
+            }
+
+            50% {
+                border-radius: 61% 39% 27% 73%/ 62% 77% 23% 38%;
+            }
+
+            75% {
+                border-radius: 38% 62% 74% 26%/ 75% 25% 75% 25%;
+            }
+
+            100% {
+                border-radius: 30% 70% 70% 30%/ 30% 30% 70% 70%;
+            }
+        }
+
+        /* lost and found */
+        /* .lost_and_found { */
+            /* display: flex;
+    justify-content: center; */
+            /*   margin: 30px;
+            text-align: center;
+            padding: 3% 7%;
+            font-family: 'Sansita Swashed', cursive;
+            text-decoration: none;*/
+        /* } */
+
+        /* .typewrite { */
+            /*  font-size: 40px;
+            text-decoration: none;*/
+        /* } */
+
+        #camp {
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(0.jpg);
+            background-repeat: no-repeat;
+            background-blend-mode: darken;
+            background-size: 800px 400px;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            #camp {
+                background-size: 800px 300px;
+                padding: 50px;
+            }
+        }
+         @media(min-width: 769px) and (max-width: 1000px) {
+            #camp {
+                background-size: 800px 300px;
+                padding: 80px;
+            }
+        }
+
+        #hhh {
+            text-decoration: none;
+            color: #66ff99;
+            text-shadow: 0 5px 5px #000000bb;
+            padding: 7%;
+        }
+
+        @media (max-width: 1000px) {
+            #hhh {
+
+                margin-top: 20%;
+                text-align: center;
+                padding-bottom: 40px;
+                padding-top: 40px;
+                padding: 10%;
+
+            }
+            #div
+            {
+            margin-top: -30px;
+            }
+        }
+
+        .sidenav {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            /* Stay at the top */
+            left: 0;
+            background-color: #111;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+            transition: margin-left .5s;
+            padding: 20px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script src="https://use.fontawesome.com/180bbea00e.js"></script>
+    <title>Mailer Daemon</title>
+</head>
+
+
+<body>
+    <section id="title">
+        <div class="container-fluid" style="padding-bottom: 40px;">
+
+        </div>
+        <div class="container-fluid" style="height: 300px;margin-top: 40px;padding-right: 0%;margin-right: 0%;">
+            <!-- navbar -->
+            
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2" style="background-color:#F4A460">
+                <a class="navbar-brand" href="#" style="line-height: 3rem;padding-left: 1%;"><img class="title-image"
+                        src="https://media-exp1.licdn.com/dms/image/C510BAQHKBAWCAVVpPA/company-logo_200_200/0/1519895551382?e=1616025600&v=beta&t=W8-bp0XbPnvoHExQqMjDZ_gxiYVGVHmZVk-B-0R9-us"
+                        alt="Not in the phone" style="height:40px; width:40px;"> Mailer Daemon</a>
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <div>
+                    <div id="mySidenav" class="sidenav" style="display: flex;flex-direction: column;">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+                        <a href="/blog/compose"><i class="fa fa-fw fa-envelope"></i>Write Blogs</a>
+                        <a href="/blog/show"><i class="fa fa-fw fa-envelope"></i>Visit Blogs</a>
+                        <%if (isloggedin && isloggedin.admin) { %>
+                        <a href="/admin/blog/approve"><i class="fa fa-fw fa-user"></i>Admin</a>
+                        <% } %>
+                        <a href="/placement"><i class="fa fa-money" aria-hidden="true"></i> Placements</a>
+                        <%if (isloggedin) { %>
+                        <a href="/logout"><i class="fa fa-fw fa-user"></i>Logout</a>
+                        <% } %>
+                        <% if (!isloggedin) { %>
+                        <a href="/signin"><i class="fa fa-fw fa-user"></i>SignUp/LogIn</a>
+                        <% } %>
+                    </div>
+                    <div onclick="openNav()" style="margin-right: 5%;padding: 5%;">
+                        <button type="button" class="btn btn-lg my-2 my-lg-0 download-button"><i
+                                class="fa fa-bars" aria-hidden="true"></i></button>
+                    </div>
+                    <!-- <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="placement.html">Placement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog view.html">Visit Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html"> Write Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Sign In.html"> <button type="button"
+                                    class="btn btn-md my-2 my-lg-0 btn-outline-dark download-button">SignUp/LogIn</button></a>
+                        </li>
+                    </ul> -->
+                </div>
+            </nav>
+
+            <!-- title -->
+            <div class="row container">
+                <div class="col-lg-12">
+                    <div class="my_writer">
+                        <h1>
+                            <a href="" class="typewrite" data-period="2000"
+                                data-type='[ "Welcome, to Mailer Daemon.", "Newsletter of IIT(ISM) Dhanbad" ]'
+                                style="color:white;">
+                                <span class="wrap"></span>
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- <div class="your-header">
+                        <button type="button" class="btn btn-outline-dark btn-lg my-2 my-sum-0 download-button"><i class="fa fa-apple"
+                                aria-hidden="true"></i> Sign Up</button>
+                        <button type="button" class="btn btn-outline-light btn-lg download-button"><i
+                                class="fa fa-google" aria-hidden="true"></i> Log In</button>
+                    </div> -->
+                </div>
+                <!-- <div class="col-lg-6">
+                    <img class="title-image"
+                        src="https://scontent.fdel2-2.fna.fbcdn.net/v/t1.0-9/90089823_3051600828235814_7121474201071910912_o.png?_nc_cat=100&_nc_sid=09cbfe&_nc_ohc=F-R19pXDuPUAX_Y1oG8&_nc_ht=scontent.fdel2-2.fna&oh=0dcd82522bd651094081a3992b2c5478&oe=5F9BE35E"
+                        alt="Not in the phone">
+                </div> -->
+            </div>
+        </div>
+
+    </section>
+
+    <!-- features -->
+    <section id="features">
+        <div class="row our_services">
+            <u>
+                <h2 style="display: flex;justify-content: center;text-align: center;">Daemons we Provide</h2>
+            </u>
+        </div>
+        <div class="row">
+            <div class="feature-box col-lg-4">
+                <i class="fa fa-check-circle fa-4x icon" aria-hidden="true" style="color:#ef8172;margin: 1rem;"></i>
+                <h3>Placement Daemon</h3>
+                <p>Everything, you wonna know about the placements.</p>
+            </div>
+            <div class="feature-box col-lg-4">
+                <i class="fa fa-bullseye fa-4x icon" aria-hidden="true" style="color:#ef8172;margin: 1rem;"></i>
+                <h3>Lost and Found</h3>
+                <p>You have lost something in the campus,chill, we are there for u.</p>
+            </div>
+            <div class="feature-box col-lg-4">
+                <i class="fa fa-heart fa-4x icon" aria-hidden="true" style="color:#ef8172; margin: 1rem;"></i>
+                <h3>Campus Daemon</h3>
+                <p>Wonna sneak into the campus news?.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- placement section -->
+    <section id="press" style="margin: 60px 0px; ">
+        <div id="div">
+
+            <h1 id="place">Placement Daemon</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- <a href="placement.html" class="btn btn-success" style="padding-top: 25px">Explore!</a>-->
+        </div>
+
+        <a href="placement.html" class="center btn btn-primary btn-lg" style="margin-top: 0px;">Explore More</a>
+        <!--     <div class="press row">
+            <div class="press-items col-lg-4">
+                <img src="https://turntable.kagiso.io/images/amazon-logo.width-800.jpg" alt="amazon"
+                    style="height: 250px;">
+            </div>
+            <div class="press-items col-lg-4">
+                <img src="https://th.bing.com/th/id/OIP.Ptka9jhcNi6M3TnMRNeDOAHaEK?pid=Api&rs=1" alt=""
+                    style="height:250px;">
+            </div>
+            <div class="press-items col-lg-4">
+                <img src="http://1.bp.blogspot.com/-hkNkoCjc5UA/T4JTlCjhhfI/AAAAAAAAB98/XxQwZ-QPkI8/s1600/Free+Google+Wallpapers+3.jpg"
+                    alt="" style="height:250px;">
+            </div>
+        </div>-->
+    </section>
+    <hr>
+    <!-- for carousel -->
+    <section class="carousel-extra" style="background-color: black;">
+
+        <div class="blogs-box" id="camp">
+
+            <!-- <div class="blogs-animation">-->
+            <div class="actual-blog">
+                <h2 id="hh">Campus Daemon</h2>
+
+            </div>
+        </div>
+        </div>
+
+        <!-- <div id="carousel">
+            <figure id="spinner">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/still-lake.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pink-milford-sound.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/paradise.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/morekai.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/milky-blue-lagoon.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/lake-tekapo.jpg" alt>
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/milford-sound.jpg" alt>
+            </figure>
+        </div>
+        <span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+        <span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span> -->
+
+        <a href="campus.html" class="center btn btn-primary btn-lg" style="margin-top: 0px;">Explore More</a>
+    </section>
+
+    <!-- lost and found  -->
+    <section id="lost_and_found">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="text-decoration:none">
+            <h2 id="hhh" style="display: flex;justify-content: center;text-align: center; text-decoration: none;">Lost
+                and Found</h2>
+            <div class="lost_and_found" style="text-decoration:none">
+                <u>
+
+                </u>
+                <br>
+                <!--  <p id="para">We've got u all covered</p>-->
+            </div>
+            
+            <a href="lostnfound.html" class="center btn btn-primary btn-lg" style="margin-top: 10px">Explore More</a>
+        </div>
+    </section>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var angle = 0;
+        function galleryspin(sign) {
+            spinner = document.querySelector("#spinner");
+            if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+            spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+        }
+
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+<footer>
+    <hr>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="Contact-Us">
+        <a class="navbar-brand" href="#">Contact Us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://www.facebook.com/MDiitism/?__xts__[0]=68.ARCHcGPhUIaM6dOH49sbEiT-B"><i
+                            class="fa fa-facebook" aria-hidden="true"></i> Facebook</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/md_iit_dhanbad/"><i class="fa fa-instagram"
+                            aria-hidden="true"></i> Instagram</i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.linkedin.com/company/mailer-daemon/?originalSubdomain=in"><i
+                            class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/channel/UCrcdJ3AGxugb7X2k5uadBFg"><i
+                            class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</footer>
+
+</html>

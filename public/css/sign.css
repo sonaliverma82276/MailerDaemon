@@ -1,0 +1,180 @@
+body
+{
+	
+	margin:0;
+	padding:0;
+	background-color: #9ded91;
+	background-size:cover;
+	font-family: sans-serif; 
+}
+
+.loginBox
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:350px;
+	height:510px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5) ;
+	
+}
+
+
+
+h2
+{
+	margin:0;
+	padding:0 0 20px;
+	color:#faa550;
+	text-align:center;
+} 
+
+
+
+.loginBox p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	
+} 
+
+
+.loginBox input
+{
+	width:100%;
+	margin-bottom: 20px; 
+}
+
+.loginBox input[type="text"], .loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+	
+	
+}
+
+
+.loginBox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height: 50px;
+	width: 100px;
+	color:#fff;
+	font-size:16px;
+	background-color:#faa550;
+	margin-left:90px;
+	cursor:pointer;
+	border-radius:20px;
+	
+}
+
+h4 a{
+	margin-top: -80px;
+	color: white;
+	margin-bottom: 10px;
+	
+}
+h4 {
+	margin-top: 0px;
+	margin-left: 10px;
+	
+}
+
+
+
+.loginBox input[type="submit"]:hover
+{
+	background: #9ded91;
+	color: #262626;
+}
+ 
+ 
+ 
+
+.loginBox a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+} 
+
+
+::placeholder
+{
+	color:rgba(255,255,255,0.5); 
+}
+
+
+.user
+{
+	width:100px;
+	height:100px; 
+	overflow:hidden;
+	position:absolute;
+	top:calc(-100px/2);
+	left:calc(50% - 50px);
+	border-radius:50%;
+}
+#anc{
+	text-decoration: underline;
+	font-size: 16px;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	font-size: 24px;
+	
+	margin-left: 90px;
+	
+} 
+@media (max-width: 1000px)
+{   h2{
+	font-size: 32px;
+}
+	p{
+		font-size: 30px;
+		
+	}
+	.loginBox{
+		width:  75%;
+		height: 680px;
+	}
+	#anc{
+		margin-left: 55px;
+		font-size: 30px;
+	}
+	.loginBox input[type="submit"]
+	{
+		font-size: 30px;
+	}
+	.loginBox input[type="text"], .loginBox input[type="password"]
+	{
+		font-size: 25px;
+	}
+	
+}
+@media (max-width:1000px){
+	.loginBox input[type="submit"]{
+	margin-left: 38%;
+	width: 130px;
+	height: 60px;
+	margin-top: 30px;
+	
+}
+	h4{
+		margin-left: 30px;
+	}
+	#anc{
+		margin-left: 37%;
+	}
+}

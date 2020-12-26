@@ -1,0 +1,169 @@
+body
+{
+	
+	margin:0;
+	padding:0;
+	background-color: #9ded91;
+	background-size:cover;
+	font-family: sans-serif; 
+}
+
+.loginBox
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:350px;
+	height:500px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5) ;
+	
+}
+
+
+
+h2
+{
+	margin:0;
+	padding:0 0 20px;
+	color:#faa550;
+	text-align:center;
+} 
+
+
+
+.loginBox p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	
+} 
+
+
+.loginBox input
+{
+	width:100%;
+	margin-bottom: 20px; 
+}
+
+.loginBox input[type="text"], .loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+	
+	
+}
+
+
+.loginBox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height: 50px;
+	color:#fff;
+	font-size:16px;
+	background-color:#faa550;
+	width: 100px;
+	cursor:pointer;
+	border-radius:20px;
+	margin-left:85px;
+	padding: 5px;
+}
+
+
+.loginBox input[type="submit"]:hover
+{
+	background: #9ded91;
+	color: #262626;
+}
+ 
+ 
+ 
+
+.loginBox a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+} 
+
+
+::placeholder
+{
+	color:rgba(255,255,255,0.5); 
+}
+
+#fog{
+	margin-left: 2px;
+	margin-top: 20px;
+	
+}
+#head a{
+	margin-left: 7px;
+	color: white;
+	
+}
+.user
+{
+	width:100px;
+	height:100px; 
+	overflow:hidden;
+	position:absolute;
+	top:calc(-100px/2);
+	left:calc(50% - 50px);
+	border-radius:50%;
+}
+#anc{
+	text-decoration: underline;
+	font-size: 16px;
+	color: #529bbf;
+	cursor: pointer;
+	
+} 
+#head{
+	color: white;
+
+	
+}
+@media (max-width: 1000px)
+{
+	.loginBox{
+		width : 75%;
+		height: 610px;
+	}
+	.loginBox input[type="submit"]{
+		margin-top: 20px;
+		font-size: 30px;
+		width: 130px;
+		height: 60px;
+		margin-left: 38%;
+	}
+	.loginBox input[type="text"], .loginBox input[type="password"]
+	{
+		font-size: 25px;
+	}
+	p{
+		font-size: 30px;
+	}
+	#head{
+		font-size: 25px;
+	}
+	#fog{
+		font-size: 25px;
+	}
+	#anc{
+		font-size: 25px;
+	}
+	h2{
+		font-size: 32px;
+	}
+}
