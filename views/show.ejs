@@ -2,6 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,9 +19,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 		
-		 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+		 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
@@ -495,6 +499,10 @@ button:focus {
   hr.light {
   padding-bottom: 0.1rem;
 }
+#mdelete {
+  width:80px;
+  font-size: 12px;
+}
 #complete {
    padding-right: 2px;
     padding-left: 2px;
@@ -531,6 +539,10 @@ button:focus {
   #complete {
    padding-right: 2px;
     padding-left: 2px;
+}
+#mdelete {
+  width:70px;
+  font-size: 11px;
 }
 #mcomplete {
    padding-right: 32px;
@@ -583,6 +595,23 @@ hr.light {
   padding: 10px;
 }
 } 
+.mdelete {
+  outline: none;
+  outline: 0;
+  margin-bottom: 10px;
+  width:130px;
+  font-weight: bolder;
+  margin-top: 15px;
+  font-size: 17px;
+  background-color: #faa550;
+  padding: 7px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+ .mdelete:hover {
+  background-color: rgb(250, 140, 80);
+}
 
 </style>
 </head>
@@ -640,7 +669,7 @@ hr.light {
            <div class="mySlides">
             <div class="row">
        <div class="col-12">
-         <p id="name_date"><%= newshow[i].name %> &#9679;  <%= newshow[i].date %>  </p></div> </div>
+         <p id="name_date"><%= newshow[i].name %> &#9679;  <%= newshow[i].date %> &#9679;  <%= newshow[i].time %>  </p></div> </div>
          <div class="row">
          <div class="col-12">
          <h2 id="mtitle"> <%=  newshow[i].title %> </h2> </div> </div>
@@ -654,8 +683,64 @@ hr.light {
          <div class="col-8 like_c">
          <p id="likes<%= newshow[i]._id %>" class="likes" data-count="<%= newshow[i].like %>"><%= newshow[i].like %> likes</p> </div>
            <div class="col-4 like_c">
-             <button id="likebtn" onclick="$(this).find('i').toggleClass('far fas selected-heart border-heart')" data-id="<%= newshow[i]._id %>"><i class="far fa-heart border-heart" ></i></button> 
+             <button id="likebtn" onclick="
+        if(document.getElementById('hearto').className=='far fa-heart border-heart'){
+        var t = $(this).data('id');
+        var  a = $('#likes'+t).attr('data-count');
+        var i=$(this).find('i');
+        a++; 
+        $.ajax({
+            url: '/like/'+t,
+           type: 'POST',
+           cache: false,
+            success: function (data) {
+                $('#likes'+t).text(a + ' likes');
+                $('#likes'+t).attr('data-count', a);
+                i.toggleClass('far fas selected-heart border-heart');
+                console.log('Success! '+data);
+            },
+        }); }
+        else {
+          var t = $(this).data('id');
+        var  a = $('#likes'+t).attr('data-count');
+        var i=$(this).find('i');
+        a--; 
+        $.ajax({
+            url: '/unlike/'+t,
+           type: 'POST',
+           cache: false,
+            success: function (data) {
+                $('#likes'+t).text(a + ' likes');
+                $('#likes'+t).attr('data-count', a);
+                i.toggleClass('far fas selected-heart border-heart');
+                console.log('Success! '+data);
+            },
+        });
+        }
+    " data-id="<%= newshow[i]._id %>">
+    <% var clas="far fa-heart border-heart"; %>
+    <% for(var j=0;j<user.length;j++){ %>
+    <% if(user[j].id==newshow[i]._id) { clas="fas fa-heart selected-heart";  }%>
+    <% console.log(user[j].id); %>
+    <% } %>
+    <i id="hearto" class="<%=clas%>" >
+     
+    </i>
+  </button>
+
+             <!--
+             <button id="unlikebtn" data-id="<%= newshow[i]._id %>" style="display: none;"><i class="fas fa-heart selected-heart" ></i></button> -->
+
+             <!-- onclick="$(this).find('i').toggleClass('far fas selected-heart border-heart')"  -->
           </div> </div>
+         <%  if(admin){ %>
+          <div class="row">
+         <div class="col-12"> <center>
+          <form action="/admin/approve" method="post">
+             <button class="mdelete" id="mdelete" name="delete" style="margin-left: 5px;" value="<%=newshow[i]._id%>" formaction="/admin/post/delete">Delete</button></form> </center>
+          </div> 
+         </div>
+         <% } %>
      </div>
      <% } %>
             </div>
@@ -727,73 +812,8 @@ JHARKHAND, INDIA, 826004.</span>
       </div>
      
     </footer>
-<script>   /*
-$('#likebtn').on('click',function() {
-   var t = $(this).attr("userId"),
-       a = $('#likes').attr("data-count");
-       if($(this).find("i").className("far fas selected-heart border-heart")) 
-       a++;
-     else a--;
-       $('#likes').text(a + " likes");
+<script>   
 
-}); */
-$(function() {
-    $("body").on("click", "#likebtn", function() {
-        var t = $(this).data("id");
-        var  a = $('#likes'+t).attr("data-count");
-        a++;
-        $('#likes'+t).text(a + " likes");
-        $(this).attr('id', 'unlikebtn');
-        $('#likes'+t).attr('data-count', a);
-      /*   $.ajax({
-            type: "POST",
-            url: "/like" + t,
-            data: "id=" + t,
-            success: function(t) {}
-        }) */
-         $.ajax({
-            method: 'POST',
-            url: "/likes/" + t,
-            data: "id=" + t,
-            contentType: false,
-            cache: false,
-            processData: false,
-            async: true,
-            success: function (data) {
-                // Get and display the result
-                window.alert("liked");
-                console.log('Success!');
-            },
-        });
-    });
-});
-$(function() {
-    $("body").on("click", "#unlikebtn", function() {
-        var t = $(this).data("id");
-        var  a = $('#likes'+t).attr("data-count");
-        a -= 1;
-        $('#likes'+t).text(a + " likes");
-        $(this).attr("id", "likebtn");
-        $('#likes'+t).attr('data-count', a);
-        i = this, $.ajax({
-            type: "POST",
-            url: "/unlike" + t,
-            data: "id=" + t,
-            success: function(t) {}
-        })
-    });
-});
-
-/*let likebtn= document.querySelector('#likebtn');
-let input1= document.querySelector('#input1');
-likebtn.addEventListener('click',function ram(){
-input1.value=parseInt(input1.value)+1;
-input1.style.color="#e37259";
-input1.style.fontSize="20px"
-likebtn.removeEventListener('click',ram);
-
-
-}) */
 var slideIndex = 1;
 showSlides(slideIndex);
 
