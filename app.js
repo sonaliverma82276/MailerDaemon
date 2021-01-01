@@ -36,14 +36,18 @@ mongoose.set("useCreateIndex",true); //add-signup
 //add-signup
 const userSchema=new mongoose.Schema({
 	username: {
-            type: String
+            type: String, 
+            unique: true
         },
 	password: {
             type: String
         },
 	name: {
-            type: String
+            type: String, 
+            unique: true
         },
+    likedposts: [
+        ],
     admin: {
          type:Boolean,
         default:false
@@ -73,6 +77,9 @@ const pendingSchema = new mongoose.Schema ({
         },
         date: {
             type: String,
+        },
+        time: {
+            type: String,
         }
 }) ;
 
@@ -90,6 +97,9 @@ const ApprovedSchema = new mongoose.Schema ({
             required: true
         },
         date: {
+            type: String,
+        },
+        time: {
             type: String,
         },
         like: {
@@ -112,35 +122,45 @@ app.get("/placement",function(req,res){
     res.render("placement");
 });
 
-app.get("/blog/show",function(req,res){
+app.get("/blog/show",isLoggedIn,function(req,res){
 	Approved.find({},function(err,items){
-     res.render("show",{newshow:items});
+     res.render("show",{newshow:items,user:req.user.likedposts,admin:req.user.admin});
 	});
     
 });
 
-app.post("/likes/:id",isLoggedIn,function(req,res){
+app.post("/like/:id",isLoggedIn,function(req,res){
    Approved.findById(req.params.id, function (err, theUser) {
         if (err) {
             console.log(err);
         } else {
             theUser.like += 1;
+            var id=req.params.id;
+            var p={id};
+            req.user.likedposts.push(p);
+            req.user.save();
             theUser.save();
-            console.log(theUser.like);
-            res.json({ success: true }); //something like this...
+            console.log(req.params.id +" got " + theUser.like +" likes");
+            res.send('SUCCESS likes increased'); //something like this...
         }
-    });
-    /*var button=req.body.like;  var likes=button.like; likes+=1;
-    Approved.findByIdAndUpdate(button, { like: likes }, 
-                            function (err, docs) { 
-    if (err){ 
-        console.log(err) 
-    } 
-    else{ 
-        console.log("Updated User : ", docs);
-        res.redirect("/blog/show");
-    } 
-});  */
+    }); 
+}); 
+
+app.post("/unlike/:id",isLoggedIn,function(req,res){
+   Approved.findById(req.params.id, function (err, theUser) {
+        if (err) {
+            console.log(err);
+        } else {
+            theUser.like -= 1;
+            var id=req.params.id;
+            var p={id};
+            req.user.likedposts.pull(p);
+            req.user.save();
+            theUser.save();
+            console.log(req.params.id +" got " + theUser.like +" likes");
+            res.send('SUCCESS likes decreased'); //something like this...
+        }
+    }); 
 }); 
 
 app.get("/admin/blog/approve",isAdmin,function(req,res){
@@ -161,6 +181,17 @@ app.post("/admin/delete",isAdmin,function(req,res){
    });
 });
 
+app.post("/admin/post/delete",isAdmin,function(req,res){
+    const button=req.body.delete;
+   // console.log(button+" ");
+   Approved.findByIdAndRemove(button,function(err){
+     if(!err){
+        console.log("Succesfully deleted!");
+        res.redirect("/blog/show");
+     }
+   });
+});
+
 app.post("/admin/approve",isAdmin,function(req,res){
 	const button=req.body.approve;
     var Title="start";
@@ -173,7 +204,8 @@ app.post("/admin/approve",isAdmin,function(req,res){
                     title: Title,
                    content: Content,
                    name:pending.name,
-                   date:pending.date
+                   date:pending.date,
+                   time:pending.time
 	               }); 
 	          approved.save();
 	          console.log("Approved "+Title);
@@ -201,11 +233,13 @@ app.post("/blog/compose",isLoggedIn,function(req,res){
     var m=d.getMonth();
     var month=["January","February","March","April","May","June","July","August","September","October","November","December"];
 	const datee= month[m]+" "+d.getDate() +" "+d.getFullYear();
+    const time=d.getHours()+":"+d.getMinutes();
     const pending = new Pending ({
        title: Title,
        content: Content,
        name: name,
-       date:datee
+       date:datee,
+       time:time
 	}); 
 	pending.save();
 	console.log("Pending: "+Title+"\nuser: "+name+"\ndate: "+datee);
