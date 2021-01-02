@@ -684,7 +684,7 @@ hr.light {
          <p id="likes<%= newshow[i]._id %>" class="likes" data-count="<%= newshow[i].like %>"><%= newshow[i].like %> likes</p> </div>
            <div class="col-4 like_c">
              <button id="likebtn" onclick="
-        if(document.getElementById('hearto').className=='far fa-heart border-heart'){
+        if($(this).find('i').hasClass('far fa-heart border-heart')){
         var t = $(this).data('id');
         var  a = $('#likes'+t).attr('data-count');
         var i=$(this).find('i');
@@ -694,13 +694,13 @@ hr.light {
            type: 'POST',
            cache: false,
             success: function (data) {
-                $('#likes'+t).text(a + ' likes');
-                $('#likes'+t).attr('data-count', a);
-                i.toggleClass('far fas selected-heart border-heart');
-                console.log('Success! '+data);
+                $('#likes'+t).text(data.like + ' likes');
+                $('#likes'+t).attr('data-count', data.like);
+                i.attr('class','fas fa-heart selected-heart');
+                console.log('Success! '+data.like);
             },
         }); }
-        else {
+        if($(this).find('i').hasClass('fas fa-heart selected-heart')) {
           var t = $(this).data('id');
         var  a = $('#likes'+t).attr('data-count');
         var i=$(this).find('i');
@@ -710,10 +710,10 @@ hr.light {
            type: 'POST',
            cache: false,
             success: function (data) {
-                $('#likes'+t).text(a + ' likes');
-                $('#likes'+t).attr('data-count', a);
-                i.toggleClass('far fas selected-heart border-heart');
-                console.log('Success! '+data);
+                $('#likes'+t).text(data.like + ' likes');
+                $('#likes'+t).attr('data-count', data.like);
+                i.attr('class','far fa-heart border-heart');
+                console.log('Success! '+data.like);
             },
         });
         }
