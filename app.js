@@ -141,7 +141,7 @@ app.post("/like/:id",isLoggedIn,function(req,res){
             req.user.save();
             theUser.save();
             console.log(req.params.id +" got " + theUser.like +" likes");
-            res.send('SUCCESS likes increased'); //something like this...
+            res.json({like:theUser.like}); //something like this...
         }
     }); 
 }); 
@@ -158,7 +158,7 @@ app.post("/unlike/:id",isLoggedIn,function(req,res){
             req.user.save();
             theUser.save();
             console.log(req.params.id +" got " + theUser.like +" likes");
-            res.send('SUCCESS likes decreased'); //something like this...
+            res.json({like:theUser.like});//something like this...
         }
     }); 
 }); 
@@ -263,7 +263,7 @@ function isAdmin(req,res,next){
         console.log(req.user.id);
         return next();
     }
- req.flash('notadmin', 'Your must have admin rights to perform this action!!'); 
+ req.flash('notadmin', 'Your must login with admin details to perform this action!!'); 
   res.redirect('/admin_error_login');
    // window.alert("Your must have admin rights to perform this action!");
    // res.redirect("/");
@@ -275,21 +275,32 @@ app.get("/signup",function(req,res){
     res.render("signup");
 });
 app.post("/signup",function(req,res){
-	req.body.name
-    req.body.username
-    req.body.password
-    User.register(new User({username: req.body.username }), req.body.password,function(err,user){
+    User.findOne(
+   {
+     $or: [
+            { username: req.body.username },
+            { name: req.body.name }
+          ]
+   },function(error,doc){
+        if(doc!=null) {
+            req.flash('userexist', 'The username/email you used is already registered, please try with different username/email.'); 
+             console.log(doc); console.log("exists");
+             res.redirect('/user_exist');
+        }
+        else {
+            User.register(new User({username: req.body.username }), req.body.password,function(err,user){
          if(err){ console.log("123FAILED!!!!!");
              console.log(err);
-             res.redirect("/signup"); 
+             req.flash('usernameexist', 'The username/email you used is already registered, please try with different username/email.');
+             res.redirect('/username_exist');
          }
          passport.authenticate("local")(req,res,function(){
              console.log(req.body.name);
-             User.findOneAndUpdate({username:req.body.username},{name: req.body.name}, function(err, result) {
-    if (err) {
-    	console.log("FAILED!!!!!");
-      console.log(err);
-      req.flash('signuperror', 'Error in singup, please try again!'); 
+             User.findOneAndUpdate({username:req.body.username},{name: req.body.name}, function(errr, result) {
+    if (errr) {
+        console.log("FAILED!!!!!");
+      console.log(errr);
+      req.flash('signuperror', 'Error in singup, please try again with different email!'); 
   res.redirect('/signup_error');
 
     } else { console.log("SUCCESS!!!!!");
@@ -300,6 +311,9 @@ app.post("/signup",function(req,res){
             
    });
         });
+        }
+   }
+);
     });
 //signin
 app.get("/signin",function(req,res){
@@ -336,7 +350,13 @@ app.get("/logout",function(req,res){
 //flash
 app.get('/admin_error_login', (req, res) => { 
     res.send(req.flash('notadmin')); 
-}); 
+});
+app.get('/user_exist', (req, res) => { 
+    res.send(req.flash('userexist')); 
+});
+app.get('/username_exist', (req, res) => { 
+    res.send(req.flash('usernameexist')); 
+});
 app.get('/signup_error', (req, res) => { 
     res.send(req.flash('signuperror')); 
 });
